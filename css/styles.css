@@ -34,10 +34,11 @@ main {
 
 input {
     margin: 10px 20px;
-    background-color: #aaffc1;
+    background-color: #8aefa7af;
+    color: #2c62e1;
     border: none;
     border-radius: 10px;
-    box-shadow: 0 0 5px #f4f6ed;
+    box-shadow: 0 0 5px #05050554;
     padding: 5px;
     cursor: pointer;
 }
