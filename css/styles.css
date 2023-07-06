@@ -28,19 +28,52 @@ body::before {
     z-index: -1;
 }
 
+header {
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.1em;
+    margin: 20px 0 10px 0;
+}
+
 main {
     width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+main>p {
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 input {
     margin: 10px 20px;
-    background-color: #8aefa7af;
-    color: #2c62e1;
+    background: linear-gradient(#8aefa7, #559d6a);
     border: none;
     border-radius: 10px;
     box-shadow: 0 0 5px #05050554;
     padding: 5px;
     cursor: pointer;
+    height: 25px;
+    width: 235px;
+    margin: 10px 5px;
+}
+
+.button-group {
+    display: flex;
+}
+
+.coming-soon {
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    font-size: .8em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0;
 }
 
 ul {
