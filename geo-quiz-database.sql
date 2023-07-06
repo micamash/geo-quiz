@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS topic;
 
 CREATE TABLE topic (
 	topic_id serial,
-	name varchar(200) NOT NULL,
+	topic_name varchar(200) NOT NULL,
 	CONSTRAINT PK_topic PRIMARY KEY(topic_id)
 );
 
@@ -30,13 +30,12 @@ CREATE TABLE answer (
 );
 
 INSERT INTO topic (name) VALUES
-	('Flags'),
+	('US State Flags'),
 	('Countries'),
-	('States'),
-	('Capitals'),
-	('State License Plates'),
-	('State Nicknames'),
-	('State Abbreviations');
+	('States of USA'),
+	('US State Capitals'),
+	('Provinces of Canada'),
+	('World Landmarks');
 	
 
 COMMIT;
