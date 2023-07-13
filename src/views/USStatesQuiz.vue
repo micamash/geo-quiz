@@ -24,7 +24,11 @@
     <body>
       <header>
         <router-link to="/">
-          <img src="/img/back-button.jpg" id="back-button" alt="Back arrow" />
+          <img
+            src="../assets/back-button.jpg"
+            id="back-button"
+            alt="Back arrow"
+          />
         </router-link>
         <h1>Quiz Page</h1>
       </header>
@@ -40,14 +44,14 @@
             name="stateQuestion"
             value="Answer 1"
           />
-          <label for="Answer 1">Answer 1</label><br />
+          <label for="Answer 1">Answer 1</label>
           <input
             type="radio"
             id="Answer 2"
             name="stateQuestion"
             value="Answer 2"
           />
-          <label for="Answer 2">Answer 2</label><br />
+          <label for="Answer 2">Answer 2</label>
           <input
             type="radio"
             id="Answer 3"
@@ -62,8 +66,6 @@
             value="Answer 4"
           />
           <label for="Answer 4">Answer 4</label>
-
-          <br />
 
           <input type="submit" value="Submit" />
         </form>
@@ -92,37 +94,10 @@ export default {
 </script>
 
 <style>
-html,
-body {
-  font-family: "Raleway", sans-serif;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(#5cc1f0, #0f4964);
-  z-index: -1;
-}
-
 header {
   font-family: "Amatic SC", cursive;
   font-size: 1.1em;
-  margin: 20px 0 5px 0;
+  margin: 10px 0 5px 0;
   display: flex;
   justify-content: space-between;
   width: 500px;
@@ -136,6 +111,10 @@ body > header > a {
   font-family: "Amatic SC", cursive;
   font-size: 2.5em;
   color: black;
+}
+
+h1 {
+  margin: 5px;
 }
 
 main {
@@ -175,17 +154,24 @@ h2 {
   margin: 0;
 }
 
-ul {
+form {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  /* display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 5px 0;
+  margin: 5px 0; */
 }
 
 li {
   list-style-type: none;
-  margin: 0 25px;
+  margin: 0px;
 }
 
 a {
