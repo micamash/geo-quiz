@@ -23,7 +23,10 @@
 
     <body>
       <header>
-        <h1>World Wiz Geo Quiz</h1>
+        <h1>
+          <span style="display: inline-block; width: 140px"></span>
+          World Wiz Geo Quiz
+        </h1>
       </header>
 
       <main>
