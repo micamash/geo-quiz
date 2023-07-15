@@ -73,7 +73,6 @@
       <footer>
         <nav>
           <ul>
-            <li>About</li>
             <li>
               Created by <a href="https://github.com/micamash">Ashley Mical</a>
             </li>
@@ -200,5 +199,9 @@ footer {
   justify-content: center;
   bottom: 0;
   left: 0;
+}
+
+footer ul li {
+  margin: 0 20px;
 }
 </style>

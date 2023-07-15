@@ -38,35 +38,24 @@
 
         <form action="/sample.html">
           <p>This is the question!</p>
-          <input
-            type="radio"
-            id="Answer 1"
-            name="stateQuestion"
-            value="Answer 1"
-          />
-          <label for="Answer 1">Answer 1</label>
-          <input
-            type="radio"
-            id="Answer 2"
-            name="stateQuestion"
-            value="Answer 2"
-          />
-          <label for="Answer 2">Answer 2</label>
-          <input
-            type="radio"
-            id="Answer 3"
-            name="stateQuestion"
-            value="Answer 3"
-          />
-          <label for="Answer 3">Answer 3</label>
-          <input
-            type="radio"
-            id="Answer 4"
-            name="stateQuestion"
-            value="Answer 4"
-          />
-          <label for="Answer 4">Answer 4</label>
-
+          <div class="radio-group">
+            <label>
+              <input type="radio" name="stateQuestion" value="Answer 1" />
+              Answer 1
+            </label>
+            <label>
+              <input type="radio" name="stateQuestion" value="Answer 2" />
+              Answer 2
+            </label>
+            <label>
+              <input type="radio" name="stateQuestion" value="Answer 3" />
+              Answer 3
+            </label>
+            <label>
+              <input type="radio" name="stateQuestion" value="Answer 4" />
+              Answer 4
+            </label>
+          </div>
           <input type="submit" value="Submit" />
         </form>
       </main>
@@ -74,7 +63,6 @@
       <footer>
         <nav>
           <ul>
-            <li>About</li>
             <li>
               Created by <a href="https://github.com/micamash">Ashley Mical</a>
             </li>
@@ -122,6 +110,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   text-align: center;
   background-color: #239ecf7a;
   border-radius: 10px;
@@ -132,6 +121,10 @@ main {
 main > p {
   font-weight: bold;
   text-transform: uppercase;
+}
+
+img {
+  width: 500px;
 }
 
 input {
@@ -161,12 +154,16 @@ form {
   align-items: center;
 }
 
-ul {
-  /* display: flex;
-  justify-content: center;
+.radio-group {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  text-align: center;
-  margin: 5px 0; */
+  margin-right: 140px;
+}
+
+label {
+  display: flex;
+  align-items: center;
 }
 
 li {
