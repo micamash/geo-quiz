@@ -17,16 +17,25 @@ Work in progress. A quiz game for learning flags, countries, states, and capital
 
 ### Screenshot
 
-[<img src="" height="300"/>]()
+[<img src="/public/geo-quiz-screenshot.png" height="300"/>]()
 
 ### Links
 
-- Solution URL: [GitHub Project Page]()
+- Solution URL: [GitHub Project Page](https://github.com/micamash/geo-quiz)
 - Live Site URL: [Geo Quiz]()
 
 ## My process
 
 ### Built with
+
+-HTML
+-CSS
+-JavaScript
+-Java
+-Vue
+
+-IntelliJ
+-Visual Studio Code
 
 ### What I learned
 
