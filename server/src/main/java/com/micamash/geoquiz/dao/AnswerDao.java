@@ -17,11 +17,11 @@ public class AnswerDao {
         jdbcTemplate = new JdbcTemplate(datasource);
     }
 
-    public List<Answer> listAnswerTextForQuestion() {
+    public List<Answer> listAnswerTextForQuestion(int questionId) {
 
         List<Answer> answers = new ArrayList<>();
         String sql = "SELECT * " +
-                "FROM answer" +
+                "FROM answer " +
                 "WHERE question_id = ?";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
 
@@ -75,6 +75,15 @@ public class AnswerDao {
         } else {
             return false;
         }
+    }
+
+    public Answer getCorrectAnswer(int questionId) {
+        String sql = "SELECT * FROM answer WHERE question_id = ? AND is_correct = true";
+        SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql, questionId);
+        if (rowSet.next()) {
+            return mapRowToAnswer(rowSet);
+        }
+        return null;
     }
 
     private Answer mapRowToAnswer(SqlRowSet rowSet) {
