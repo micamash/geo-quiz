@@ -33,35 +33,12 @@ public class QuestionService implements QuestionServiceInterface {
     }
 
     @Override
-    public Question getQuestionById(int questionId) {
+    public Question getQuestionByQuestionId(int questionId) {
         return questionDao.getQuestionByQuestionId(questionId);
     }
 
     @Override
     public List<Question> getQuestionsByTopicId(int topicId) {
         return questionDao.getQuestionByTopicId(topicId);
-    }
-
-    @Override
-    public boolean validateUserAnswer(int questionId, String userAnswer) {
-        Question question = questionDao.getQuestionByQuestionId(questionId);
-        if (question == null) {
-            throw new IllegalArgumentException("Invalid questionId: " + questionId);
-        }
-
-        Answer correctAnswer = answerDao.getCorrectAnswer(questionId);
-        if (correctAnswer == null) {
-            throw new IllegalArgumentException("No correct answer found for questionId: " + questionId);
-        }
-
-        String correctAnswerText = correctAnswer.getAnswerText();
-
-        return userAnswer.equals(correctAnswerText);
-    }
-
-
-    @Override
-    public int calculateQuizScore(int correctAnswers, int totalQuestions) {
-        return (int) ((double) correctAnswers / totalQuestions * 100);
     }
 }

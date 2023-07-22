@@ -2,6 +2,8 @@ package com.micamash.geoquiz.service;
 
 import com.micamash.geoquiz.model.Answer;
 
+import java.util.List;
+
 public interface AnswerServiceInterface {
 
     /**
@@ -21,4 +23,10 @@ public interface AnswerServiceInterface {
      */
     boolean validateUserAnswer(int questionId, String userAnswer);
 
-}
+    /**
+     * Gets available answers for a question.
+     *
+     * @param questionId the ID of the question to validate the answer for.
+     * @return list of answer options.
+     */
+    List<Answer> getAnswersByQuestionId(int questionId);}

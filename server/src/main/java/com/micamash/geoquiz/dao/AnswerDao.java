@@ -47,19 +47,17 @@ public class AnswerDao {
         }
     }
 
-    public Answer getByQuestionId(int questionId) {
-
-        String sql = "SELECT * " +
-                "FROM answer " +
-                "WHERE question_id = ?";
+    public List<Answer> getAnswersByQuestionId(int questionId) {
+        List<Answer> answers = new ArrayList<>();
+        String sql = "SELECT * FROM answer WHERE question_id = ?";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, questionId);
 
-        if (results.next()) {
+        while (results.next()) {
             Answer answer = mapRowToAnswer(results);
-            return answer;
-        } else {
-            return null;
+            answers.add(answer);
         }
+
+        return answers;
     }
 
     public boolean isAnswerCorrect(int questionId) {
