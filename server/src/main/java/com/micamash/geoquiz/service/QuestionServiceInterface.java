@@ -7,12 +7,11 @@ import java.util.List;
 public interface QuestionServiceInterface {
 
     /**
-     * Generates a random question for a given topic.
+     * Retrieves a list of all questions.
      *
-     * @param topicId The ID of the topic for which the question should be generated.
-     * @return A random Question object for the specified topic, or null if no question is available.
+     * @return A list of all question objects.
      */
-    Question generateRandomQuestion(int topicId);
+    List<Question> listAllQuestions();
 
     /**
      * Retrieves a Question by its ID.
@@ -29,4 +28,12 @@ public interface QuestionServiceInterface {
      * @return A list of Question objects for the specified topic.
      */
     List<Question> getQuestionsByTopicId(int topicId);
+
+    /**
+     * Generates a random question for a given topic.
+     *
+     * @param topicId The ID of the topic for which the question should be generated.
+     * @return A random Question object for the specified topic, or null if no question is available.
+     */
+    Question generateRandomQuestion(int topicId);
 }

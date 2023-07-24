@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/topics")
+@RequestMapping("/topics")
 public class TopicController {
 
     private final TopicService topicService;
@@ -18,6 +18,12 @@ public class TopicController {
     @Autowired
     public TopicController(TopicService topicService) {
         this.topicService = topicService;
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Topic>> listAllTopics() {
+        List<Topic> topics = topicService.listAllTopics();
+        return new ResponseEntity<>(topics, HttpStatus.OK);
     }
 
     @PostMapping
@@ -57,11 +63,5 @@ public class TopicController {
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-    }
-
-    @GetMapping
-    public ResponseEntity<List<Topic>> listAllTopics() {
-        List<Topic> topics = topicService.listAllTopics();
-        return new ResponseEntity<>(topics, HttpStatus.OK);
     }
 }

@@ -6,11 +6,12 @@ import java.util.List;
 public interface TopicServiceInterface {
 
     /**
-     * Creates a new topic.
+     * Retrieves a list of all topics.
      *
-     * @param topic The topic to create.
+     * @return A list of all Topic objects.
      */
-    void createTopic(Topic topic);
+    List<Topic> listAllTopics();
+
 
     /**
      * Retrieves a topic by its ID.
@@ -19,6 +20,13 @@ public interface TopicServiceInterface {
      * @return The Topic object if found, or null if not found.
      */
     Topic getTopicById(int topicId);
+
+    /**
+     * Creates a new topic.
+     *
+     * @param topic The topic to create.
+     */
+    void createTopic(Topic topic);
 
     /**
      * Updates an existing topic.
@@ -34,10 +42,4 @@ public interface TopicServiceInterface {
      */
     void deleteTopic(int topicId);
 
-    /**
-     * Retrieves a list of all topics.
-     *
-     * @return A list of all Topic objects.
-     */
-    List<Topic> listAllTopics();
 }

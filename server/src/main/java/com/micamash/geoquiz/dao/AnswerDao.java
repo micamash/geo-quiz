@@ -32,6 +32,17 @@ public class AnswerDao {
         return answers;
     }
 
+    public List<Answer> listAllAnswers() {
+        List<Answer> answers = new ArrayList<>();
+        String sql = "SELECT * FROM answer";
+        SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql);
+        while (rowSet.next()) {
+            Answer answer = mapRowToAnswer(rowSet);
+            answers.add(answer);
+        }
+        return answers;
+    }
+
     public Answer getByAnswerId(int answerId) {
 
         String sql = "SELECT * " +

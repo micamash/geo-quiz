@@ -1,10 +1,18 @@
 package com.micamash.geoquiz.service;
 
 import com.micamash.geoquiz.model.Answer;
+import com.micamash.geoquiz.model.Question;
 
 import java.util.List;
 
 public interface AnswerServiceInterface {
+
+    /**
+     * Retrieves a list of all answers.
+     *
+     * @return A list of all answer objects.
+     */
+    List<Answer> listAllAnswers();
 
     /**
      * Retrieves the correct answer for a given questionId.

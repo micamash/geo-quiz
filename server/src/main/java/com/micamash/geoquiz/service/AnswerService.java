@@ -16,6 +16,10 @@ public class AnswerService implements AnswerServiceInterface {
     }
 
     @Override
+    public List<Answer> listAllAnswers() {
+        return answerDao.listAllAnswers();
+    }
+    @Override
     public Answer getCorrectAnswer(int questionId) {
         return answerDao.getCorrectAnswer(questionId);
     }

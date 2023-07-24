@@ -1,6 +1,7 @@
 package com.micamash.geoquiz.controller;
 
 import com.micamash.geoquiz.model.Question;
+import com.micamash.geoquiz.model.Topic;
 import com.micamash.geoquiz.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,12 @@ public class QuestionController {
     @Autowired
     public QuestionController(QuestionService questionService) {
         this.questionService = questionService;
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Question>> listAllQuestions() {
+        List<Question> questions = questionService.listAllQuestions();
+        return new ResponseEntity<>(questions, HttpStatus.OK);
     }
 
     @GetMapping("/{topicId}")
@@ -40,7 +47,7 @@ public class QuestionController {
         }
     }
 
-    @GetMapping("/topic/{topicId}")
+    @GetMapping("/topics/{topicId}")
     public ResponseEntity<List<Question>> getQuestionsByTopicId(@PathVariable int topicId) {
         List<Question> questions = questionService.getQuestionsByTopicId(topicId);
         if (!questions.isEmpty()) {
