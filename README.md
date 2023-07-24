@@ -17,7 +17,7 @@ Work in progress. A quiz game for learning flags, countries, states, and capital
 
 ### Screenshot
 
-[<img src="/public/geo-quiz-screenshot.png" height="300"/>]()
+[<img src="client/public/geo-quiz-screenshot.png" height="300"/>]()
 
 ### Links
 
