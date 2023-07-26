@@ -75,11 +75,47 @@
 </template>
 
 <script>
+import QuestionService from "../services/QuestionService.js";
+import AnswerService from "../services/AnswerService.js";
+
 export default {
   name: "USStatesQuiz",
-  components: {},
+  data() {
+    return {
+      question: null,
+      answerOptions: [],
+      selectedAnswer: null,
+    };
+  },
+  async created() {
+    try {
+      this.question = await QuestionService.getRandomQuestion();
+      this.answerOptions = this.question.answers;
+    } catch (error) {
+      console.error("Error fetching question:", error);
+    }
+  },
+  methods: {
+    async submitAnswer() {
+      if (this.selectedAnswer) {
+        const isCorrect = await AnswerService.validateUserAnswer(
+          this.question.questionId,
+          this.selectedAnswer
+        );
+
+        if (isCorrect) {
+          console.log("Correct answer!");
+        } else {
+          console.log("Wrong answer!");
+        }
+      } else {
+        console.log("Please select an answer.");
+      }
+    },
+  },
 };
 </script>
+
 
 <style>
 header {
