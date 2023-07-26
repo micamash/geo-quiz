@@ -34,11 +34,13 @@
       </header>
 
       <main>
-        <img src="https://placehold.co/600x400" alt="Image hint for question" />
+        <!-- <img src="https://placehold.co/600x400" alt="Image hint for question" /> -->
+        <img :src="question.imageUrl" alt="Image hint for question" />
 
-        <form action="/sample.html">
-          <p>This is the question!</p>
-          <div class="radio-group">
+        <form @submit.prevent="submitAnswer">
+          <!-- <p>This is the question!</p> -->
+          <p>{{ question.questionText }}</p>
+          <!-- <div class="radio-group">
             <label>
               <input type="radio" name="stateQuestion" value="Answer 1" />
               Answer 1
@@ -54,6 +56,18 @@
             <label>
               <input type="radio" name="stateQuestion" value="Answer 4" />
               Answer 4
+            </label>
+          </div>
+          <input type="submit" value="Submit" /> -->
+          <div class="radio-group">
+            <label v-for="(answerOption, index) in answerOptions" :key="index">
+              <input
+                type="radio"
+                :name="stateQuestion"
+                :value="answerOption.answerText"
+                v-model="selectedAnswer"
+              />
+              {{ answerOption.answerText }}
             </label>
           </div>
           <input type="submit" value="Submit" />

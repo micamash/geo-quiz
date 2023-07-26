@@ -16,7 +16,6 @@ const routes = [
         name: 'USStatesQuiz',
         component: USStatesQuiz
     }
-    // Other quiz routes will go here!
 ];
 
 export default new VueRouter({

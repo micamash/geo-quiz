@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '/node_modules/axios/dist/axios.min.js';
 
 const BASE_URL = 'http://localhost:9000';
 
