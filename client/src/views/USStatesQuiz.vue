@@ -53,15 +53,15 @@ export default {
   name: "USStatesQuiz",
   data() {
     return {
-      question: null,
+      question: "",
       answerOptions: [],
       selectedAnswer: null,
-      topicId: 1,
+      topicId: 3,
     };
   },
   async created() {
     try {
-      this.question = await QuestionService.getRandomQuestion();
+      this.question = await QuestionService.getRandomQuestion(this.topicId);
       this.answerOptions = this.question.answers;
     } catch (error) {
       console.error("Error fetching question:", error);

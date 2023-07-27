@@ -1,10 +1,8 @@
 package com.micamash.geoquiz.service;
 
 import com.micamash.geoquiz.dao.QuestionDao;
-import com.micamash.geoquiz.model.Answer;
 import com.micamash.geoquiz.model.Question;
 import com.micamash.geoquiz.dao.AnswerDao;
-import com.micamash.geoquiz.model.Topic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

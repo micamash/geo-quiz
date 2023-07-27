@@ -1,7 +1,6 @@
 package com.micamash.geoquiz.controller;
 
 import com.micamash.geoquiz.model.Question;
-import com.micamash.geoquiz.model.Topic;
 import com.micamash.geoquiz.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/questions")
+@CrossOrigin(origins = "http://localhost:8080")
 public class QuestionController {
 
     private final QuestionService questionService;
@@ -27,7 +27,7 @@ public class QuestionController {
         return new ResponseEntity<>(questions, HttpStatus.OK);
     }
 
-    @GetMapping("/topics/{topicId}/random")
+    @GetMapping("/random/{topicId}")
     public ResponseEntity<Question> generateRandomQuestionByTopic(@PathVariable int topicId) {
         Question randomQuestion = questionService.generateRandomQuestion(topicId);
         if (randomQuestion != null) {

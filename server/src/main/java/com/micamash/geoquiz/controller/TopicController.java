@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/topics")
+@CrossOrigin(origins = "http://localhost:8080")
 public class TopicController {
 
     private final TopicService topicService;

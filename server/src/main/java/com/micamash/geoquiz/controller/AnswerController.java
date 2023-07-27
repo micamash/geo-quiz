@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/answers")
+@CrossOrigin(origins = "http://localhost:8080")
 public class AnswerController {
 
     private final AnswerService answerService;
