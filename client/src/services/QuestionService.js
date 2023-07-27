@@ -3,7 +3,7 @@ import axios from 'axios';
 export default {
 
     getRandomQuestion(topicId) {
-        return axios.get('/topics/' + topicId);
+        return axios.get(`/questions/topics/${topicId}/random`);
 
     },
 
@@ -12,7 +12,7 @@ export default {
     },
 
     getQuestionsByTopicId(topicId) {
-        return axios.get('/topic/' + topicId);
+        return axios.get(`/questions/topics/${topicId}`);
     },
 
 }

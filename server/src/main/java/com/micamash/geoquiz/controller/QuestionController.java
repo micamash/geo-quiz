@@ -27,7 +27,7 @@ public class QuestionController {
         return new ResponseEntity<>(questions, HttpStatus.OK);
     }
 
-    @GetMapping("/topics/{topicId}")
+    @GetMapping("/topics/{topicId}/random")
     public ResponseEntity<Question> generateRandomQuestionByTopic(@PathVariable int topicId) {
         Question randomQuestion = questionService.generateRandomQuestion(topicId);
         if (randomQuestion != null) {

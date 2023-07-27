@@ -37,7 +37,7 @@ public class AnswerController {
         }
     }
 
-    @GetMapping("/{questionId}")
+    @GetMapping("/{questionId}/correct")
     public ResponseEntity<Answer> getCorrectAnswer(@PathVariable int questionId) {
         Answer correctAnswer = answerService.getCorrectAnswer(questionId);
         if (correctAnswer != null) {

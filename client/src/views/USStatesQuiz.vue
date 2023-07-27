@@ -12,36 +12,16 @@
     </header>
 
     <main>
-      <!-- <img src="https://placehold.co/600x400" alt="Image hint for question" /> -->
       <img :src="question.imageUrl" alt="Image hint for question" />
 
       <form @submit.prevent="submitAnswer">
-        <!-- <p>This is the question!</p> -->
         <p>{{ question.questionText }}</p>
-        <!-- <div class="radio-group">
-              <label>
-                <input type="radio" name="stateQuestion" value="Answer 1" />
-                Answer 1
-              </label>
-              <label>
-                <input type="radio" name="stateQuestion" value="Answer 2" />
-                Answer 2
-              </label>
-              <label>
-                <input type="radio" name="stateQuestion" value="Answer 3" />
-                Answer 3
-              </label>
-              <label>
-                <input type="radio" name="stateQuestion" value="Answer 4" />
-                Answer 4
-              </label>
-            </div>
-            <input type="submit" value="Submit" /> -->
+
         <div class="radio-group">
           <label v-for="(answerOption, index) in answerOptions" :key="index">
             <input
               type="radio"
-              :name="stateQuestion"
+              name="stateQuestion"
               :value="answerOption.answerText"
               v-model="selectedAnswer"
             />
@@ -76,6 +56,7 @@ export default {
       question: null,
       answerOptions: [],
       selectedAnswer: null,
+      topicId: 1,
     };
   },
   async created() {
