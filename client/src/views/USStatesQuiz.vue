@@ -12,7 +12,7 @@
     </header>
 
     <main>
-      <img :src="question.imageUrl" alt="Image hint for question" />
+      <img :src="question.imageName" alt="Image hint for question" />
 
       <form @submit.prevent="submitAnswer">
         <p>{{ question.questionText }}</p>
@@ -22,7 +22,7 @@
             <input
               type="radio"
               name="stateQuestion"
-              :value="answerOption.answerText"
+              :value="answerOptions.answerText"
               v-model="selectedAnswer"
             />
             {{ answerOption.answerText }}
@@ -60,14 +60,23 @@ export default {
     };
   },
   async created() {
-    try {
-      this.question = await QuestionService.getRandomQuestion(this.topicId);
-      this.answerOptions = this.question.answers;
-    } catch (error) {
-      console.error("Error fetching question:", error);
-    }
+    this.loadData();
   },
   methods: {
+    loadData() {
+      QuestionService.getRandomQuestion(this.topicId)
+        .then((response) => {
+          this.question = response.data;
+          return AnswerService.getAnswersByQuestionId(this.question.questionId);
+        })
+        .then((answersResponse) => {
+          this.answerOptions = answersResponse.data;
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+    },
+
     async submitAnswer() {
       if (this.selectedAnswer) {
         const isCorrect = await AnswerService.validateUserAnswer(
