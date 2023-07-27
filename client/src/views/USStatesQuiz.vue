@@ -129,7 +129,7 @@ main {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #239ecf7a;
+  background-color: #239ecf;
   border-radius: 10px;
   box-shadow: 0 0 5px #05050554;
   padding: 10px;
@@ -141,7 +141,8 @@ main > p {
 }
 
 img {
-  width: 500px;
+  width: 450px;
+  border-radius: 10px;
 }
 
 input {
