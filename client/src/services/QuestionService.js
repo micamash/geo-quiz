@@ -1,35 +1,18 @@
-import axios from '/node_modules/axios/dist/axios.min.js';
-
-const BASE_URL = 'http://localhost:9000';
+import axios from 'axios';
 
 export default {
-    async getRandomQuestion() {
-        try {
-            const response = await axios.get(`${BASE_URL}/questions/us-states`);
-            return response.data;
-        } catch (error) {
-            console.error('Error fetching random question:', error);
-            throw error;
-        }
+
+    getRandomQuestion(topicId) {
+        return axios.get('/topics/' + topicId);
+
     },
 
-    async getQuestionById(questionId) {
-        try {
-            const response = await axios.get(`${BASE_URL}/questions/${questionId}`);
-            return response.data;
-        } catch (error) {
-            console.error('Error fetching question by ID:', error);
-            throw error;
-        }
+    getQuestionById(questionId) {
+        return axios.get('/questions/' + questionId);
     },
 
-    async getQuestionsByTopicId(topicId) {
-        try {
-            const response = await axios.get(`${BASE_URL}/questions/topic/${topicId}`);
-            return response.data;
-        } catch (error) {
-            console.error('Error fetching questions by topic ID:', error);
-            throw error;
-        }
+    getQuestionsByTopicId(topicId) {
+        return axios.get('/topic/' + topicId);
     },
-};
+
+}
