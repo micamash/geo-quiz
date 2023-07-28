@@ -19,10 +19,10 @@ export default {};
 .footer {
   width: 100%;
   height: 30px;
-  background-color: #aaffc173;
+  margin: 25px 0 0px 0;
+  background-color: #239ecf80;
   display: flex;
   text-align: center;
-  position: fixed;
   justify-content: center;
   bottom: 0;
   left: 0;

@@ -9,18 +9,33 @@
         <p>{{ question.questionText }}</p>
 
         <div class="radio-group">
-          <label v-for="(answerOption, index) in answerOptions" :key="index">
-            <input
-              type="radio"
-              name="stateQuestion"
-              :value="answerOption.answerText"
-              v-model="selectedAnswer"
-            />
-            {{ answerOption.answerText }}
-          </label>
+          <div class="radio-container">
+            <label v-for="(answerOption, index) in leftOptions" :key="index">
+              <input
+                type="radio"
+                name="stateQuestion"
+                :value="answerOption.answerText"
+                v-model="selectedAnswer"
+              />
+              {{ answerOption.answerText }}
+            </label>
+          </div>
+
+          <div class="radio-container">
+            <label v-for="(answerOption, index) in rightOptions" :key="index">
+              <input
+                type="radio"
+                name="stateQuestion"
+                :value="answerOption.answerText"
+                v-model="selectedAnswer"
+              />
+              {{ answerOption.answerText }}
+            </label>
+          </div>
         </div>
         <input type="submit" value="Submit" />
       </form>
+
       <score
         :currentRound="roundNumber"
         :totalRounds="totalRounds"
@@ -66,6 +81,14 @@ export default {
   },
   async created() {
     this.loadData();
+  },
+  computed: {
+    leftOptions() {
+      return this.answerOptions.slice(0, 2);
+    },
+    rightOptions() {
+      return this.answerOptions.slice(2, 4);
+    },
   },
   methods: {
     loadData() {
@@ -164,14 +187,29 @@ form {
 
 .radio-group {
   display: flex;
+  justify-content: center;
+  margin-left: 25px;
+}
+
+.radio-container {
+  display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-right: 140px;
+  align-items: flex-start;
+  margin: 5px;
+  width: 50%;
 }
 
 label {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  width: 150px;
+}
+
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
 }
 
 li {
