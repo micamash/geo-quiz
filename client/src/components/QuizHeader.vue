@@ -1,14 +1,25 @@
 <template>
   <div class="header">
     <router-link to="/">
-      <img src="../assets/back-button.jpg" id="back-button" alt="Back arrow" />
+      <img
+        src="../../public/back-button.jpg"
+        id="back-button"
+        alt="Back arrow"
+      />
     </router-link>
-    <h1>Quiz Page</h1>
+    <h1>{{ pageTitle }}</h1>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    pageTitle: {
+      type: String,
+      required: true,
+    },
+  },
+};
 </script>
 
 <style scoped>

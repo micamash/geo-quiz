@@ -1,6 +1,6 @@
 <template>
   <body>
-    <QuizHeader> </QuizHeader>
+    <QuizHeader :pageTitle="pageName"> </QuizHeader>
 
     <div v-if="!gameStarted">
       <QuestionSelections @start-game="onStartGame" />
@@ -86,6 +86,7 @@ export default {
   },
   data() {
     return {
+      pageName: "US States Quiz",
       question: "",
       answerOptions: [],
       selectedAnswer: null,
@@ -190,7 +191,7 @@ export default {
 </script>
   
   
-  <style>
+<style>
 main {
   width: 500px;
   display: flex;

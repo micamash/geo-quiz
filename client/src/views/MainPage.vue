@@ -1,10 +1,7 @@
 <template>
   <body>
     <header>
-      <h1>
-        <span style="display: inline-block; width: 140px"></span>
-        World Wiz Geo Quiz
-      </h1>
+      <h1>World Wiz Geo Quiz</h1>
     </header>
 
     <main>
@@ -65,37 +62,7 @@
 export default {};
 </script>
   
-  <style>
-html,
-body {
-  font-family: "Raleway", sans-serif;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  text-align: center;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("../assets/world.jpeg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: -1;
-}
-
+<style scoped>
 header {
   font-family: "Amatic SC", cursive;
   font-size: 1.1em;
