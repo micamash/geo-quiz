@@ -8,7 +8,11 @@
 
     <div v-else>
       <main v-if="!gameOver">
-        <img :src="question.imageName" alt="Image hint for question" />
+        <img
+          class="question-img"
+          :src="question.imageName"
+          alt="Image hint for question"
+        />
 
         <form @submit.prevent="submitAnswer">
           <p>{{ question.questionText }}</p>
@@ -212,7 +216,11 @@ main > p {
 
 img {
   width: 500px;
-  border-radius: 10px;
+  border-radius: 20px;
+}
+
+.question-img {
+  box-shadow: 0 0 5px #05050554;
 }
 
 input,

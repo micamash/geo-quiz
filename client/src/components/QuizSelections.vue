@@ -28,7 +28,7 @@ export default {
 
 <style scoped>
 .quiz-selections {
-  margin-top: 200px;
+  margin-top: 100px;
   background-color: #239ecf;
   border-radius: 10px;
   box-shadow: 0 0 5px #05050554;

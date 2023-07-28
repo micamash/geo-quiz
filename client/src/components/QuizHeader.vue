@@ -29,23 +29,17 @@ export default {
   margin: 0px 0 10px 0;
   height: 50px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-content: center;
   width: 100vw;
-  background-color: #239ecf80;
+  gap: 10px;
 }
 
 #back-button {
   width: 50px;
 }
 
-body > header > a {
-  font-family: "Amatic SC", cursive;
-  font-size: 2.5em;
-  color: black;
-}
-
 h1 {
-  margin: 5px;
+  margin: 5px 0 0 0;
 }
 </style>

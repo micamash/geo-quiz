@@ -16,20 +16,29 @@ export default {};
 </script>
 
 <style scoped>
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .footer {
   width: 100%;
   height: 30px;
-  margin: 10px 0 0px 0;
   background-color: #239ecf80;
   display: flex;
   text-align: center;
-  justify-content: center;
   position: fixed;
+  justify-content: center;
   bottom: 0;
   left: 0;
 }
 
 ul {
+  display: flex;
+  margin: 0px;
+  justify-content: center;
+  align-items: center;
   gap: 100px;
 }
 </style>
