@@ -1,15 +1,6 @@
 <template>
   <body>
-    <header>
-      <router-link to="/">
-        <img
-          src="../assets/back-button.jpg"
-          id="back-button"
-          alt="Back arrow"
-        />
-      </router-link>
-      <h1>Quiz Page</h1>
-    </header>
+    <QuizHeader> </QuizHeader>
 
     <main v-if="!gameOver">
       <img :src="question.imageName" alt="Image hint for question" />
@@ -28,7 +19,7 @@
             {{ answerOption.answerText }}
           </label>
         </div>
-        <input type="submit" value="Submit" @click="submitAnswer" />
+        <input type="submit" value="Submit" />
       </form>
       <score
         :currentRound="roundNumber"
@@ -59,11 +50,13 @@
 import QuestionService from "../services/QuestionService.js";
 import AnswerService from "../services/AnswerService.js";
 import Score from "../components/Score.vue";
+import QuizHeader from "../components/QuizHeader.vue";
 
 export default {
   name: "USStatesQuiz",
   components: {
     Score,
+    QuizHeader,
   },
   data() {
     return {
@@ -125,29 +118,6 @@ export default {
   
   
   <style>
-header {
-  font-family: "Amatic SC", cursive;
-  font-size: 1.1em;
-  margin: 10px 0 5px 0;
-  display: flex;
-  justify-content: space-between;
-  width: 500px;
-}
-
-#back-button {
-  width: 50px;
-}
-
-body > header > a {
-  font-family: "Amatic SC", cursive;
-  font-size: 2.5em;
-  color: black;
-}
-
-h1 {
-  margin: 5px;
-}
-
 main {
   width: 500px;
   display: flex;
