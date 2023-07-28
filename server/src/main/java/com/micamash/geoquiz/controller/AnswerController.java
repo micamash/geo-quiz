@@ -1,7 +1,6 @@
 package com.micamash.geoquiz.controller;
 
 import com.micamash.geoquiz.model.Answer;
-import com.micamash.geoquiz.model.Topic;
 import com.micamash.geoquiz.service.AnswerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

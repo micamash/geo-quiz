@@ -13,7 +13,7 @@ export default {
 
     async validateUserAnswer(questionId, userAnswer) {
         try {
-            const response = await axios.get(`/api/answers/${questionId}`);
+            const response = await axios.get(`answers/${questionId}`);
             const answers = response.data;
 
             const selectedAnswer = answers.find(answer => answer.answerText === userAnswer);

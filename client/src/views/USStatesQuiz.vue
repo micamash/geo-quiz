@@ -31,18 +31,10 @@
     <div v-else>
       <h2>Game Over!</h2>
       <p>Your final score is: {{ score }}/{{ totalRounds * 5 }}</p>
+      <button class="play-again">Play Again?</button>
     </div>
 
-    <footer>
-      <nav>
-        <ul>
-          <li>
-            Created by <a href="https://github.com/micamash">Ashley Mical</a>
-          </li>
-          <li>&#169; 2023 World Wiz Geo Quiz</li>
-        </ul>
-      </nav>
-    </footer>
+    <Footer></Footer>
   </body>
 </template>
   
@@ -51,12 +43,14 @@ import QuestionService from "../services/QuestionService.js";
 import AnswerService from "../services/AnswerService.js";
 import Score from "../components/Score.vue";
 import QuizHeader from "../components/QuizHeader.vue";
+import Footer from "../components/Footer.vue";
 
 export default {
   name: "USStatesQuiz",
   components: {
     Score,
     QuizHeader,
+    Footer,
   },
   data() {
     return {
@@ -188,17 +182,5 @@ li {
 a {
   text-decoration: none;
   color: #0f4964;
-}
-
-footer {
-  width: 100%;
-  height: 30px;
-  background-color: #aaffc173;
-  display: flex;
-  text-align: center;
-  position: fixed;
-  justify-content: center;
-  bottom: 0;
-  left: 0;
 }
 </style>
