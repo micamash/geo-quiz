@@ -2,53 +2,68 @@
   <body>
     <QuizHeader> </QuizHeader>
 
-    <main v-if="!gameOver">
-      <img :src="question.imageName" alt="Image hint for question" />
-
-      <form @submit.prevent="submitAnswer">
-        <p>{{ question.questionText }}</p>
-
-        <div class="radio-group">
-          <div class="radio-container">
-            <label v-for="(answerOption, index) in leftOptions" :key="index">
-              <input
-                type="radio"
-                name="stateQuestion"
-                :value="answerOption.answerText"
-                v-model="selectedAnswer"
-              />
-              {{ answerOption.answerText }}
-            </label>
-          </div>
-
-          <div class="radio-container">
-            <label v-for="(answerOption, index) in rightOptions" :key="index">
-              <input
-                type="radio"
-                name="stateQuestion"
-                :value="answerOption.answerText"
-                v-model="selectedAnswer"
-              />
-              {{ answerOption.answerText }}
-            </label>
-          </div>
-        </div>
-        <input type="submit" value="Submit" />
-      </form>
-
-      <score
-        :currentRound="roundNumber"
-        :totalRounds="totalRounds"
-        :currentScore="score"
-        :maxScore="100"
-      />
-    </main>
-    <div v-else>
-      <h2>Game Over!</h2>
-      <p>Your final score is: {{ score }}/{{ totalRounds * 5 }}</p>
-      <button class="play-again">Play Again?</button>
+    <div v-if="!gameStarted">
+      <QuestionSelections @start-game="onStartGame" />
     </div>
 
+    <div v-else>
+      <main v-if="!gameOver">
+        <img :src="question.imageName" alt="Image hint for question" />
+
+        <form @submit.prevent="submitAnswer">
+          <p>{{ question.questionText }}</p>
+
+          <div class="radio-group">
+            <div class="radio-container">
+              <label
+                v-for="(answerOption, index) in leftOptions"
+                :key="index"
+                :class="getAnswerClass(answerOption.answerText)"
+              >
+                <input
+                  type="radio"
+                  name="stateQuestion"
+                  :value="answerOption.answerText"
+                  v-model="selectedAnswer"
+                  :disabled="isAnswered"
+                />
+                {{ answerOption.answerText }}
+              </label>
+            </div>
+
+            <div class="radio-container">
+              <label
+                v-for="(answerOption, index) in rightOptions"
+                :key="index"
+                :class="getAnswerClass(answerOption.answerText)"
+              >
+                <input
+                  type="radio"
+                  name="stateQuestion"
+                  :value="answerOption.answerText"
+                  v-model="selectedAnswer"
+                  :disabled="isAnswered"
+                />
+                {{ answerOption.answerText }}
+              </label>
+            </div>
+          </div>
+          <input type="submit" value="Submit" />
+        </form>
+
+        <score
+          :currentRound="roundNumber"
+          :totalRounds="totalRounds"
+          :currentScore="score"
+          :maxScore="maxScore"
+        />
+      </main>
+      <div v-else class="game-end">
+        <h2>Game Over!</h2>
+        <p>Your final score is: {{ score }}/{{ totalRounds * 5 }}</p>
+        <button class="play-again" @click="restartGame">Play Again?</button>
+      </div>
+    </div>
     <Footer></Footer>
   </body>
 </template>
@@ -56,6 +71,7 @@
   <script>
 import QuestionService from "../services/QuestionService.js";
 import AnswerService from "../services/AnswerService.js";
+import QuestionSelections from "../components/QuizSelections.vue";
 import Score from "../components/Score.vue";
 import QuizHeader from "../components/QuizHeader.vue";
 import Footer from "../components/Footer.vue";
@@ -63,6 +79,7 @@ import Footer from "../components/Footer.vue";
 export default {
   name: "USStatesQuiz",
   components: {
+    QuestionSelections,
     Score,
     QuizHeader,
     Footer,
@@ -77,6 +94,10 @@ export default {
       roundNumber: 1,
       score: 0,
       gameOver: false,
+      isAnswered: false,
+      isAnsweredCorrectly: false,
+      gameStarted: false,
+      maxScore: 100,
     };
   },
   async created() {
@@ -112,22 +133,57 @@ export default {
           this.selectedAnswer
         );
 
+        this.isAnswered = true;
+
         if (isCorrect) {
-          console.log("Correct answer!");
           this.score += 5;
+          this.isAnsweredCorrectly = true;
         } else {
-          console.log("Wrong answer!");
+          this.isAnsweredCorrectly = false;
         }
       } else {
-        console.log("Please select an answer.");
+        this.isAnswered = false;
       }
 
-      this.roundNumber++;
-      if (this.roundNumber <= this.totalRounds) {
-        this.loadData();
-      } else {
-        this.gameOver = true;
+      setTimeout(() => {
+        this.isAnswered = false;
+        this.isAnsweredCorrectly = false;
+
+        this.selectedAnswer = null;
+
+        this.roundNumber++;
+        if (this.roundNumber <= this.totalRounds) {
+          this.loadData();
+        } else {
+          this.gameOver = true;
+        }
+      }, 1000);
+    },
+
+    getAnswerClass(answerOption) {
+      if (this.isAnswered && answerOption === this.selectedAnswer) {
+        return this.isAnsweredCorrectly ? "correct-answer" : "wrong-answer";
       }
+      return "";
+    },
+
+    onStartGame(questionCount) {
+      this.totalRounds = questionCount;
+      this.roundNumber = 1;
+      this.score = 0;
+      this.maxScore = questionCount * 5;
+      this.gameStarted = true;
+      this.loadData();
+    },
+
+    restartGame() {
+      this.roundNumber = 1;
+      this.score = 0;
+      this.gameOver = false;
+      this.isAnswered = false;
+      this.isAnsweredCorrectly = false;
+      this.selectedAnswer = null;
+      this.gameStarted = false;
     },
   },
 };
@@ -158,7 +214,8 @@ img {
   border-radius: 10px;
 }
 
-input {
+input,
+.play-again {
   margin: 10px 20px;
   background: linear-gradient(#8aefa7, #559d6a);
   border: none;
@@ -203,7 +260,8 @@ label {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 150px;
+  width: 175px;
+  border-radius: 10px;
 }
 
 input[type="radio"] {
@@ -220,5 +278,21 @@ li {
 a {
   text-decoration: none;
   color: #0f4964;
+}
+
+.correct-answer {
+  background-color: #92fa80a2;
+}
+
+.wrong-answer {
+  background-color: #f56e6e9c;
+}
+
+.game-end {
+  margin-top: 200px;
+  background-color: #239ecf;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #05050554;
+  padding: 10px;
 }
 </style>

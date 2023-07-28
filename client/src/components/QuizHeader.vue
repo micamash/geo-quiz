@@ -15,7 +15,7 @@ export default {};
 .header {
   font-family: "Amatic SC", cursive;
   font-size: 1em;
-  margin: 0px 0 25px 0;
+  margin: 0px 0 10px 0;
   height: 50px;
   display: flex;
   justify-content: space-between;
