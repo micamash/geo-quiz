@@ -11,7 +11,7 @@
       <h1>Quiz Page</h1>
     </header>
 
-    <main>
+    <main v-if="!gameOver">
       <img :src="question.imageName" alt="Image hint for question" />
 
       <form @submit.prevent="submitAnswer">
@@ -22,15 +22,25 @@
             <input
               type="radio"
               name="stateQuestion"
-              :value="answerOptions.answerText"
+              :value="answerOption.answerText"
               v-model="selectedAnswer"
             />
             {{ answerOption.answerText }}
           </label>
         </div>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit" @click="submitAnswer" />
       </form>
+      <score
+        :currentRound="roundNumber"
+        :totalRounds="totalRounds"
+        :currentScore="score"
+        :maxScore="100"
+      />
     </main>
+    <div v-else>
+      <h2>Game Over!</h2>
+      <p>Your final score is: {{ score }}/{{ totalRounds * 5 }}</p>
+    </div>
 
     <footer>
       <nav>
@@ -48,15 +58,23 @@
   <script>
 import QuestionService from "../services/QuestionService.js";
 import AnswerService from "../services/AnswerService.js";
+import Score from "../components/Score.vue";
 
 export default {
   name: "USStatesQuiz",
+  components: {
+    Score,
+  },
   data() {
     return {
       question: "",
       answerOptions: [],
       selectedAnswer: null,
       topicId: 3,
+      totalRounds: 20,
+      roundNumber: 1,
+      score: 0,
+      gameOver: false,
     };
   },
   async created() {
@@ -86,11 +104,19 @@ export default {
 
         if (isCorrect) {
           console.log("Correct answer!");
+          this.score += 5;
         } else {
           console.log("Wrong answer!");
         }
       } else {
         console.log("Please select an answer.");
+      }
+
+      this.roundNumber++;
+      if (this.roundNumber <= this.totalRounds) {
+        this.loadData();
+      } else {
+        this.gameOver = true;
       }
     },
   },
@@ -141,7 +167,7 @@ main > p {
 }
 
 img {
-  width: 450px;
+  width: 500px;
   border-radius: 10px;
 }
 

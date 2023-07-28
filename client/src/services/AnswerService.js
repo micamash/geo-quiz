@@ -11,12 +11,24 @@ export default {
 
     },
 
-    validateUserAnswer(questionId, userAnswer) {
-        const correctAnswer = this.getCorrectAnswer(questionId);
-        const isCorrect = userAnswer.trim().toLowerCase() === correctAnswer.answerText.trim().toLowerCase();
+    async validateUserAnswer(questionId, userAnswer) {
+        try {
+            const response = await axios.get(`/api/answers/${questionId}`);
+            const answers = response.data;
 
-        return isCorrect;
+            const selectedAnswer = answers.find(answer => answer.answerText === userAnswer);
+
+            if (selectedAnswer && selectedAnswer.correct) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (error) {
+            console.error("Error fetching answers:", error);
+            return false;
+        }
     }
+
 }
 
 
