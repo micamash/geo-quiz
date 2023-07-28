@@ -14,9 +14,8 @@
         </div>
 
         <div class="coming-soon">
-          <router-link to="/us-states">
-            <input type="button" value="States of the USA" />
-          </router-link>
+          <input type="button" value="World Landmarks" />
+          <h2>^ Coming Soon!</h2>
         </div>
       </div>
 
@@ -34,12 +33,25 @@
 
       <div class="button-group">
         <div class="coming-soon">
-          <input type="button" value="Provinces of Canada" />
+          <input type="button" value="Provinces and Territories of Canada" />
           <h2>^ Coming Soon!</h2>
         </div>
 
         <div class="coming-soon">
-          <input type="button" value="World Landmarks" />
+          <router-link to="/us-states">
+            <input type="button" value="States of the USA" />
+          </router-link>
+        </div>
+      </div>
+
+      <div class="button-group">
+        <div class="coming-soon">
+          <input type="button" value="Flags of Canada" />
+          <h2>^ Coming Soon!</h2>
+        </div>
+
+        <div class="coming-soon">
+          <input type="button" value="Flags of the World" />
           <h2>^ Coming Soon!</h2>
         </div>
       </div>
@@ -129,20 +141,4 @@ a {
   text-decoration: none;
   color: #0f4964;
 }
-
-/* footer {
-  width: 100%;
-  height: 30px;
-  background-color: #aaffc173;
-  display: flex;
-  text-align: center;
-  position: fixed;
-  justify-content: center;
-  bottom: 0;
-  left: 0;
-}
-
-footer ul li {
-  margin: 0 20px;
-} */
 </style>

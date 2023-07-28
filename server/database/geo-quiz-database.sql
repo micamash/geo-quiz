@@ -34,67 +34,69 @@ INSERT INTO topic (topic_name) VALUES
 	('Countries'),
 	('States of USA'),
 	('US State Capitals'),
-	('Provinces of Canada'),
+	('Provinces and Territories of Canada'),
 	('World Landmarks');
 
 DO $$
 DECLARE 
-    v_topic_id INT;
+    us_states_topic_id INT;
+	ca_stateprov_topic_id INT;
 BEGIN
-    SELECT topic_id INTO v_topic_id FROM topic WHERE topic_name = 'States of USA';
+
+    SELECT topic_id INTO us_states_topic_id FROM topic WHERE topic_name = 'States of USA';
 
     INSERT INTO question (topic_id, question_text, image_name)
     VALUES
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Alabama.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Alaska.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Arizona.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Arkansas.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/California.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Colorado.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Connecticut.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Delaware.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Florida.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Georgia.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Hawaii.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Idaho.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Illinois.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Indiana.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Iowa.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Kansas.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Kentucky.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Louisiana.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Maine.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Maryland.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Massachusetts.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Michigan.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Minnesota.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Mississippi.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Missouri.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Montana.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Nebraska.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Nevada.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/NewHampshire.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/NewJersey.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/NewMexico.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/NewYork.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/NorthCarolina.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/NorthDakota.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Ohio.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Oklahoma.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Oregon.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Pennsylvania.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/RhodeIsland.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/SouthCarolina.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/SouthDakota.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Tennessee.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Texas.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Utah.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Vermont.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Virginia.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Washington.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/WestVirginia.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Wisconsin.jpg'),
-	(v_topic_id, 'What state is highlighted?', 'USStateImages/Wyoming.jpg');
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Alabama.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Alaska.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Arizona.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Arkansas.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/California.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Colorado.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Connecticut.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Delaware.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Florida.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Georgia.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Hawaii.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Idaho.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Illinois.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Indiana.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Iowa.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Kansas.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Kentucky.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Louisiana.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Maine.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Maryland.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Massachusetts.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Michigan.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Minnesota.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Mississippi.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Missouri.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Montana.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Nebraska.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Nevada.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/NewHampshire.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/NewJersey.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/NewMexico.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/NewYork.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/NorthCarolina.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/NorthDakota.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Ohio.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Oklahoma.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Oregon.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Pennsylvania.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/RhodeIsland.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/SouthCarolina.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/SouthDakota.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Tennessee.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Texas.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Utah.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Vermont.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Virginia.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Washington.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/WestVirginia.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Wisconsin.jpg'),
+	(us_states_topic_id, 'What state is highlighted?', 'USStateImages/Wyoming.jpg');
 
 
 INSERT INTO answer (question_id, answer_text, is_correct)
@@ -349,6 +351,93 @@ VALUES
 	(50, 'Colorado', false),
     (50, 'Wyoming', true),
     (50, 'Montana', false);
+	
+	
+SELECT topic_id INTO ca_stateprov_topic_id FROM topic WHERE topic_name = 'Provinces and Territories of Canada';
+
+INSERT INTO question (topic_id, question_text, image_name)
+VALUES
+	(ca_stateprov_topic_id, 'What territory is highlighted?', 'CanadaProvincesAndTerritories/Yukon.jpg'),
+	(ca_stateprov_topic_id, 'What territory is highlighted?', 'CanadaProvincesAndTerritories/Nunavut.jpg'),
+	(ca_stateprov_topic_id, 'What territory is highlighted?', 'CanadaProvincesAndTerritories/NorthwestTerritories.jpg'),
+	(ca_stateprov_topic_id, 'What province is highlighted?', 'CanadaProvincesAndTerritories/Saskatchewan.jpg'),
+	(ca_stateprov_topic_id, 'What province is highlighted?', 'CanadaProvincesAndTerritories/Quebec.jpg'),
+	(ca_stateprov_topic_id, 'What province is highlighted?', 'CanadaProvincesAndTerritories/PrinceEdwardIsland.jpg'),
+	(ca_stateprov_topic_id, 'What province is highlighted?', 'CanadaProvincesAndTerritories/Ontario.jpg'),
+	(ca_stateprov_topic_id, 'What province is highlighted?', 'CanadaProvincesAndTerritories/NovaScotia.jpg'),
+	(ca_stateprov_topic_id, 'What province is highlighted?', 'CanadaProvincesAndTerritories/NewfoundlandAndLabrador.jpg'),
+	(ca_stateprov_topic_id, 'What province is highlighted?', 'CanadaProvincesAndTerritories/NewBrunswick.jpg'),
+	(ca_stateprov_topic_id, 'What province is highlighted?', 'CanadaProvincesAndTerritories/Manitoba.jpg'),
+	(ca_stateprov_topic_id, 'What province is highlighted?', 'CanadaProvincesAndTerritories/BritishColumbia.jpg'),
+	(ca_stateprov_topic_id, 'What province is highlighted?', 'CanadaProvincesAndTerritories/Alberta.jpg');
+
+
+INSERT INTO answer (question_id, answer_text, is_correct)
+VALUES
+    (51, 'Northwest Territories', false),
+    (51, 'Ontario', false),
+    (51, 'Yukon', true),
+	(51, 'Saskatchewan', false),
+
+    (52, 'Quebec', false),
+    (52, 'Northwest Territories', false),
+	(52, 'Nunavut', true),
+    (52, 'Yukon', false),
+
+    (53, 'Alberta', false),
+	(53, 'Manitoba', false),
+    (53, 'British Columbia', false),
+    (53, 'Northwest Territories', true),
+
+	(54, 'Saskatchewan', true),
+    (54, 'Manitoba', false),
+    (54, 'Quebec', false),
+	(54, 'Yukon', false),
+
+    (55, 'Newfoundland and Labrador', false),
+    (55, 'New Brunswick', false),
+	(55, 'Quebec', true),
+    (55, 'Manitoba', false),
+
+    (56, 'Nova Scotia', false),
+	(56, 'Prince Edward Island', true),
+    (56, 'Quebec', false),
+    (56, 'Newfoundland and Labrador', false),
+
+	(57, 'Quebec', false),
+    (57, 'Ontario', true),
+    (57, 'Manitoba', false),
+	(57, 'Nunavut', false),
+
+    (58, 'Prince Edward Island', false),
+    (58, 'Nova Scotia', true),
+	(58, 'Newfoundland and Labrador', false),
+    (58, 'Quebec', false),
+
+    (59, 'Saskatchewan', false),
+	(59, 'Nova Scotia', false),
+    (59, 'Newfoundland and Labrador', true),
+    (59, 'New Brunswick', false),
+
+	(60, 'Nova Scotia', false),
+	(60, 'Ontario', false),
+    (60, 'Prince Edward Island', false),
+    (60, 'New Brunswick', true),
+
+	(61, 'Manitoba', true),
+	(61, 'Alberta', false),
+    (61, 'Ontario', false),
+    (61, 'Saskatchewan', false),
+
+	(62, 'Quebec', false),
+	(62, 'Alberta', false),
+    (62, 'British Columbia', true),
+    (62, 'Ontario', false),
+
+	(63, 'Ontario', false),
+	(63, 'Alberta', true),
+    (63, 'Yukon', false),
+    (63, 'British Columbia', false);
 	
 
 END $$;
