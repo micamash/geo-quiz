@@ -26,12 +26,36 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .quiz-selections {
   margin-top: 200px;
   background-color: #239ecf;
   border-radius: 10px;
   box-shadow: 0 0 5px #05050554;
   padding: 10px;
+}
+
+h2 {
+  margin: 10px;
+}
+
+button {
+  margin: 10px 20px;
+  background: linear-gradient(#8aefa7, #559d6a);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #05050554;
+  padding: 5px;
+  cursor: pointer;
+  height: 25px;
+  width: 75px;
+  margin: 5px 10px;
+}
+
+select {
+  border-radius: 10px;
+  background-color: #7ed5f7;
+  border: none;
+  box-shadow: 0 0 5px #05050554;
 }
 </style>
