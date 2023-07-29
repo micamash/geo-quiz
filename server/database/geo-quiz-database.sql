@@ -35,7 +35,9 @@ INSERT INTO topic (topic_name) VALUES
 	('States of USA'),
 	('US State Capitals'),
 	('Provinces and Territories of Canada'),
-	('World Landmarks');
+	('World Landmarks'),
+	('Flags of Canada'),
+	('World Flags');
 
 DO $$
 DECLARE 

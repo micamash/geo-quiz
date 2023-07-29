@@ -31,8 +31,9 @@
 
       <div class="button-group">
         <div class="coming-soon">
-          <input type="button" value="Provinces and Territories of Canada" />
-          <h2>^ Coming Soon!</h2>
+          <router-link to="/provinces-and-territories-of-canada">
+            <input type="button" value="Provinces and Territories of Canada" />
+          </router-link>
         </div>
 
         <div class="coming-soon">
@@ -49,7 +50,7 @@
         </div>
 
         <div class="coming-soon">
-          <input type="button" value="Flags of the World" />
+          <input type="button" value="World Flags" />
           <h2>^ Coming Soon!</h2>
         </div>
       </div>
@@ -82,11 +83,12 @@ export default {
   border-radius: 10px;
   box-shadow: 0 0 5px #05050554;
   padding: 10px;
+  gap: 10px;
 }
 
 .topic-selection > p {
-  font-weight: bold;
-  text-transform: uppercase;
+  font-weight: bolder;
+  font-style: italic;
 }
 
 input {
@@ -129,5 +131,6 @@ ul {
   align-items: center;
   text-align: center;
   margin: 5px 0;
+  list-style-type: none;
 }
 </style>

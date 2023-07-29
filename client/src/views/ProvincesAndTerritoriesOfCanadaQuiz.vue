@@ -70,8 +70,8 @@
     <Footer></Footer>
   </body>
 </template>
-  
-  <script>
+    
+    <script>
 import QuizHeader from "../components/QuizHeader.vue";
 import QuestionService from "../services/QuestionService.js";
 import AnswerService from "../services/AnswerService.js";
@@ -81,7 +81,7 @@ import GameEnd from "../components/GameEnd.vue";
 import Footer from "../components/Footer.vue";
 
 export default {
-  name: "USStatesQuiz",
+  name: "ProvincesAndTerritoriesOfCanadaQuiz",
   components: {
     QuizHeader,
     QuestionSelections,
@@ -91,11 +91,11 @@ export default {
   },
   data() {
     return {
-      pageName: "US States",
+      pageName: "Provinces and Territories of Canada",
       question: "",
       answerOptions: [],
       selectedAnswer: null,
-      topicId: 3,
+      topicId: 5,
       totalRounds: 20,
       roundNumber: 1,
       score: 0,
@@ -194,11 +194,11 @@ export default {
   },
 };
 </script>
-  
-  
+    
+    
 <style scoped>
 .question-div {
-  width: 500px;
+  width: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -216,7 +216,7 @@ export default {
 }
 
 img {
-  width: 500px;
+  width: 400px;
   border-radius: 20px;
 }
 
@@ -259,7 +259,7 @@ form {
 .radio-group {
   display: flex;
   justify-content: center;
-  margin-left: 25px;
+  margin-left: 30px;
 }
 
 .radio-container {
@@ -274,7 +274,7 @@ label {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 175px;
+  width: 250px;
   border-radius: 10px;
   margin: 5px;
 }

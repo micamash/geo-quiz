@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import MainPage from '../views/MainPage.vue';
 import USStatesQuiz from '../views/USStatesQuiz.vue';
+import ProvincesAndTerritoriesOfCanadaQuiz from '../views/ProvincesAndTerritoriesOfCanadaQuiz.vue';
 
 Vue.use(VueRouter)
 
@@ -18,6 +19,11 @@ const router = new VueRouter({
       path: '/us-states',
       name: 'USStatesQuiz',
       component: USStatesQuiz
+    },
+    {
+      path: '/provinces-and-territories-of-canada',
+      name: 'ProvincesAndTerritoriesOfCanadaQuiz',
+      component: ProvincesAndTerritoriesOfCanadaQuiz
     }
   ]
 })

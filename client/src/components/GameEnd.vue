@@ -1,7 +1,8 @@
 <template>
   <div class="game-end">
     <h2>Game Over!</h2>
-    <p>Your final score is: {{ score }}/{{ totalRounds * 5 }}</p>
+    <p>Your final score is:</p>
+    <p class="result">{{ score }}/{{ totalRounds * 5 }}</p>
     <button class="play-again" @click="restartGame">Play Again?</button>
   </div>
 </template>
@@ -43,5 +44,17 @@ export default {
 .play-again:active {
   transform: scale(0.98);
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: 400;
+  font-style: italic;
+  font-weight: bolder;
+  margin: 5px;
+}
+
+.result {
+  font-size: 1.5em;
 }
 </style>

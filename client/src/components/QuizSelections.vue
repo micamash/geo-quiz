@@ -36,7 +36,11 @@ export default {
 }
 
 h2 {
-  margin: 10px;
+  font-size: 1em;
+  font-weight: 400;
+  font-style: italic;
+  font-weight: bolder;
+  margin: 5px;
 }
 
 button {
