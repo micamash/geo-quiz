@@ -1,10 +1,8 @@
 <template>
-  <body>
-    <header>
-      <h1>World Wiz Geo Quiz</h1>
-    </header>
+  <div class="main-page">
+    <MainHeader> </MainHeader>
 
-    <main>
+    <div class="topic-selection">
       <p>Select a topic:</p>
 
       <div class="button-group">
@@ -55,42 +53,38 @@
           <h2>^ Coming Soon!</h2>
         </div>
       </div>
-    </main>
+    </div>
 
     <Footer></Footer>
-  </body>
+  </div>
 </template>
   
 <script>
 import Footer from "../components/Footer.vue";
+import MainHeader from "../components/MainHeader.vue";
 
 export default {
   components: {
     Footer,
+    MainHeader,
   },
 };
 </script>
   
 <style scoped>
-header {
-  font-family: "Amatic SC", cursive;
-  font-size: 1.1em;
-  margin: 20px 0 5px 0;
-}
-
-main {
+.topic-selection {
   width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  background-color: #239ecf7a;
+  background-color: #239ecfa4;
   border-radius: 10px;
   box-shadow: 0 0 5px #05050554;
   padding: 10px;
 }
 
-main > p {
+.topic-selection > p {
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -108,6 +102,11 @@ input {
   margin: 5px 10px;
 }
 
+input:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
 .button-group {
   display: flex;
 }
@@ -118,7 +117,7 @@ input {
 }
 
 h2 {
-  font-size: 0.8em;
+  font-size: 0.7em;
   font-weight: 400;
   font-style: italic;
   margin: 0;
@@ -130,15 +129,5 @@ ul {
   align-items: center;
   text-align: center;
   margin: 5px 0;
-}
-
-li {
-  list-style-type: none;
-  margin: 0 25px;
-}
-
-a {
-  text-decoration: none;
-  color: #0f4964;
 }
 </style>

@@ -52,6 +52,11 @@ button {
   margin: 5px 10px;
 }
 
+button:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
 select {
   border-radius: 10px;
   background-color: #7ed5f7;
