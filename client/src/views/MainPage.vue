@@ -31,13 +31,18 @@
 
       <div class="button-group">
         <div class="coming-soon">
-          <router-link to="/provinces-and-territories-of-canada">
+          <router-link
+            :to="{
+              name: 'ProvincesAndTerritoriesOfCanadaQuiz',
+              params: { topicId: 5 },
+            }"
+          >
             <input type="button" value="Provinces and Territories of Canada" />
           </router-link>
         </div>
 
         <div class="coming-soon">
-          <router-link to="/us-states">
+          <router-link :to="{ name: 'USStatesQuiz', params: { topicId: 3 } }">
             <input type="button" value="States of the USA" />
           </router-link>
         </div>
@@ -79,7 +84,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  background-color: #239ecfa4;
+  background-color: #239ecfba;
   border-radius: 10px;
   box-shadow: 0 0 5px #05050554;
   padding: 10px;

@@ -1,7 +1,5 @@
 <template>
   <body>
-    <QuizHeader :pageTitle="pageName"> </QuizHeader>
-
     <QuestionSelections v-if="!gameStarted" @start-game="onStartGame" />
 
     <div v-else>
@@ -67,35 +65,34 @@
         @restart-game="restartGame"
       />
     </div>
-    <Footer></Footer>
   </body>
 </template>
-  
-  <script>
-import QuizHeader from "../components/QuizHeader.vue";
+      
+      <script>
 import QuestionService from "../services/QuestionService.js";
 import AnswerService from "../services/AnswerService.js";
 import QuestionSelections from "../components/QuizSelections.vue";
 import Score from "../components/Score.vue";
 import GameEnd from "../components/GameEnd.vue";
-import Footer from "../components/Footer.vue";
 
 export default {
-  name: "USStatesQuiz",
+  name: "Question",
   components: {
-    QuizHeader,
     QuestionSelections,
     Score,
     GameEnd,
-    Footer,
+  },
+  props: {
+    topicId: {
+      type: Number,
+      required: true,
+    },
   },
   data() {
     return {
-      pageName: "US States",
       question: "",
       answerOptions: [],
       selectedAnswer: null,
-      topicId: 3,
       totalRounds: 20,
       roundNumber: 1,
       score: 0,
@@ -197,11 +194,11 @@ export default {
   },
 };
 </script>
-  
-  
-<style scoped>
+      
+      
+  <style scoped>
 .question-div {
-  width: 500px;
+  width: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -219,7 +216,7 @@ export default {
 }
 
 img {
-  width: 500px;
+  width: 400px;
   border-radius: 20px;
 }
 
@@ -266,7 +263,7 @@ form {
 .radio-group {
   display: flex;
   justify-content: center;
-  margin-left: 25px;
+  margin-left: 50px;
 }
 
 .radio-container {
@@ -281,7 +278,7 @@ label {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 175px;
+  width: 250px;
   border-radius: 10px;
   margin: 5px;
 }
