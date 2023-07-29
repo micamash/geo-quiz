@@ -42,4 +42,9 @@ ul {
   gap: 100px;
   list-style-type: none;
 }
+
+a {
+  text-decoration: none;
+  color: #0d3b4d;
+}
 </style>
