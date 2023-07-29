@@ -17,7 +17,11 @@ Work in progress. A quiz game for learning flags, countries, states, and capital
 
 ### Screenshot
 
-[<img src="client/public/geo-quiz-screenshot.png" height="300"/>]()
+[<img src="client/public/main-page-screenshot.png" height="300"/>]()
+[<img src="client/public/quiz-selector-screenshot.png" height="300"/>]()
+[<img src="client/public/correct-answer-screenshot.png" height="300"/>]()
+[<img src="client/public/wrong-answer-screenshot.png" height="300"/>]()
+[<img src="client/public/game-end-screenshot.png" height="300"/>]()
 
 ### Links
 
@@ -32,14 +36,22 @@ Work in progress. A quiz game for learning flags, countries, states, and capital
 -CSS
 -JavaScript
 -Java
--Vue
+-Vue.js
+-SQL
 
 -IntelliJ
 -Visual Studio Code
+-PostgreSQL
 
 ### What I learned
 
+-Continued practice building an API and also using Vue.js.
+
 ### Continued development
+
+-Add timer to quizzes.
+-Highlight correct answer when user answers incorrectly.
+-Create databases for other quiz topics.
 
 ## Author
 
