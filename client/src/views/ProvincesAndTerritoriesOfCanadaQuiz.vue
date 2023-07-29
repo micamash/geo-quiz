@@ -50,7 +50,7 @@
               </label>
             </div>
           </div>
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" :disabled="isSubmitDisabled" />
         </form>
 
         <Score
@@ -115,6 +115,9 @@ export default {
     },
     rightOptions() {
       return this.answerOptions.slice(2, 4);
+    },
+    isSubmitDisabled() {
+      return this.selectedAnswer === null;
     },
   },
   methods: {
@@ -237,9 +240,13 @@ input[type="submit"] {
   margin: 5px 10px;
 }
 
-input[type="submit"]:active {
+input[type="submit"]:not(:disabled):active {
   transform: scale(0.98);
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+input[type="submit"]:disabled {
+  color: #559d6a;
 }
 
 h2 {
@@ -259,7 +266,7 @@ form {
 .radio-group {
   display: flex;
   justify-content: center;
-  margin-left: 30px;
+  margin-left: 50px;
 }
 
 .radio-container {

@@ -3,7 +3,7 @@
     <h2>Game Over!</h2>
     <p>Your final score is:</p>
     <p class="result">{{ score }}/{{ totalRounds * 5 }}</p>
-    <button class="play-again" @click="restartGame">Play Again?</button>
+    <button class="play-again" @click="restartGame">Play Again</button>
   </div>
 </template>
 
