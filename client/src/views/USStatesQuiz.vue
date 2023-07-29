@@ -62,30 +62,33 @@
           :maxScore="maxScore"
         />
       </main>
-      <div v-else class="game-end">
-        <h2>Game Over!</h2>
-        <p>Your final score is: {{ score }}/{{ totalRounds * 5 }}</p>
-        <button class="play-again" @click="restartGame">Play Again?</button>
-      </div>
+      <GameEnd
+        v-else
+        :score="score"
+        :totalRounds="totalRounds"
+        @restart-game="restartGame"
+      />
     </div>
     <Footer></Footer>
   </body>
 </template>
   
   <script>
+import QuizHeader from "../components/QuizHeader.vue";
 import QuestionService from "../services/QuestionService.js";
 import AnswerService from "../services/AnswerService.js";
 import QuestionSelections from "../components/QuizSelections.vue";
 import Score from "../components/Score.vue";
-import QuizHeader from "../components/QuizHeader.vue";
+import GameEnd from "../components/GameEnd.vue";
 import Footer from "../components/Footer.vue";
 
 export default {
   name: "USStatesQuiz",
   components: {
+    QuizHeader,
     QuestionSelections,
     Score,
-    QuizHeader,
+    GameEnd,
     Footer,
   },
   data() {
@@ -162,7 +165,7 @@ export default {
         } else {
           this.gameOver = true;
         }
-      }, 1000);
+      }, 2000);
     },
 
     getAnswerClass(answerOption) {
@@ -223,8 +226,7 @@ img {
   box-shadow: 0 0 5px #05050554;
 }
 
-input,
-.play-again {
+input {
   margin: 10px 20px;
   background: linear-gradient(#8aefa7, #559d6a);
   border: none;
@@ -237,8 +239,7 @@ input,
   margin: 5px 10px;
 }
 
-input:active,
-.play-again:active {
+input:active {
   transform: scale(0.98);
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
@@ -304,7 +305,7 @@ a {
 }
 
 .game-end {
-  margin-top: 200px;
+  margin-top: 100px;
   background-color: #239ecf;
   border-radius: 10px;
   box-shadow: 0 0 5px #05050554;
