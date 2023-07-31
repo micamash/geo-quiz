@@ -24,8 +24,12 @@
         </div>
 
         <div class="coming-soon">
-          <input type="button" value="Flags of the USA" />
-          <h2>^ Coming Soon!</h2>
+          <router-link
+            :to="{ name: 'FlagsOfTheUSAQuiz', params: { topicId: 1 } }"
+          >
+            <input type="button" value="Flags of the USA" />
+          </router-link>
+          <h2></h2>
         </div>
       </div>
 
