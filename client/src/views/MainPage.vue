@@ -22,7 +22,7 @@
           <router-link
             :to="{ name: 'USStateCapitalsQuiz', params: { topicId: 4 } }"
           >
-            <input type="button" value="USA State Capitals" />
+            <input type="button" value="USA State and Territory Capitals" />
           </router-link>
           <h2></h2>
         </div>
@@ -31,7 +31,7 @@
           <router-link
             :to="{ name: 'FlagsOfTheUSAQuiz', params: { topicId: 1 } }"
           >
-            <input type="button" value="Flags of the USA" />
+            <input type="button" value="US State and Territory Flags" />
           </router-link>
           <h2></h2>
         </div>

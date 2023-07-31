@@ -23,10 +23,10 @@ export default {
       pageName: "",
       topicId: null,
       pageNames: {
-        1: "US State Flags",
+        1: "US State and Territory Flags",
         2: "Countries",
         3: "States of the USA",
-        4: "US State Capitals",
+        4: "US State and Territory Capitals",
         5: "Provinces and Territories of Canada",
         6: "World Landmarks",
         7: "Flags of Canada",
