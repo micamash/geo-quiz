@@ -17,11 +17,11 @@ Work in progress. A quiz game for learning flags, countries, states, and capital
 
 ### Screenshot
 
-[<img src="client/public/main-page-screenshot.png" height="300"/>]()
-[<img src="client/public/quiz-selector-screenshot.png" height="300"/>]()
-[<img src="client/public/correct-answer-screenshot.png" height="300"/>]()
-[<img src="client/public/wrong-answer-screenshot.png" height="300"/>]()
-[<img src="client/public/game-end-screenshot.png" height="300"/>]()
+[<img src="client/public/screenshots/main-page-screenshot.png" height="300"/>]()
+[<img src="client/public/screenshots/quiz-selector-screenshot.png" height="300"/>]()
+[<img src="client/public/screenshots/correct-answer-screenshot.png" height="300"/>]()
+[<img src="client/public/screenshots/wrong-answer-screenshot.png" height="300"/>]()
+[<img src="client/public/screenshots/game-end-screenshot.png" height="300"/>]()
 
 ### Links
 

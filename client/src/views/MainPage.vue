@@ -19,8 +19,12 @@
 
       <div class="button-group">
         <div class="coming-soon">
-          <input type="button" value="USA State Capitals" />
-          <h2>^ Coming Soon!</h2>
+          <router-link
+            :to="{ name: 'USStateCapitalsQuiz', params: { topicId: 4 } }"
+          >
+            <input type="button" value="USA State Capitals" />
+          </router-link>
+          <h2></h2>
         </div>
 
         <div class="coming-soon">

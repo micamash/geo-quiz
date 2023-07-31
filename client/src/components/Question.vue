@@ -4,11 +4,13 @@
 
     <div v-else>
       <div class="question-div" v-if="!gameOver">
-        <img
-          class="question-img"
-          :src="question.imageName"
-          alt="Image hint for question"
-        />
+        <div class="question-img-div">
+          <img
+            class="question-img"
+            :src="question.imageName"
+            alt="Image hint for question"
+          />
+        </div>
 
         <form @submit.prevent="submitAnswer">
           <p>{{ question.questionText }}</p>
@@ -215,6 +217,13 @@ export default {
   text-transform: uppercase;
 }
 
+.question-img-div {
+  width: 400px;
+  border-radius: 20px;
+  background-color: #05050554;
+  box-shadow: 0 0 5px #05050554;
+}
+
 img {
   width: 400px;
   border-radius: 20px;
@@ -263,7 +272,7 @@ form {
 .radio-group {
   display: flex;
   justify-content: center;
-  margin-left: 50px;
+  margin-left: 80px;
 }
 
 .radio-container {
