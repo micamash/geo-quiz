@@ -1104,19 +1104,19 @@ SELECT topic_id INTO ca_stateprov_caps_topic_id FROM topic WHERE topic_name = 'C
 
 INSERT INTO question (topic_id, question_text, image_name)
 VALUES
-	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/Yukon.jpg'),
-	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/Nunavut.jpg'),
-	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/NorthwestTerritories.jpg'),
-	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/Saskatchewan.jpg'),
-	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/Quebec.jpg'),
-	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/PrinceEdwardIsland.jpg'),
-	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/Ontario.jpg'),
-	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/NovaScotia.jpg'),
-	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/NewfoundlandAndLabrador.jpg'),
-	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/NewBrunswick.jpg'),
-	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/Manitoba.jpg'),
-	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/BritishColumbia.jpg'),
-	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/Alberta.jpg');
+	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/WhitehorseYukon.jpg'),
+	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/IqualuitNunavut.jpg'),
+	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/YellowknifeNorthwestTerritories.jpg'),
+	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/ReginaSaskatchewan.jpg'),
+	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/QuebecCityQuebec.jpg'),
+	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/CharlottetownPrinceEdwardIsland.jpg'),
+	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/TorontoOntario.jpg'),
+	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/HalifaxNovaScotia.jpg'),
+	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/StJohnsNewfoundlandAndLabrador.jpg'),
+	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/FrederictonNewBrunswick.jpg'),
+	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/WinnipegManitoba.jpg'),
+	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/VictoriaBritishColumbia.jpg'),
+	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/EdmontonAlberta.jpg');
 
 
 INSERT INTO answer (question_id, answer_text, is_correct)
