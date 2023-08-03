@@ -30,7 +30,7 @@ export default {
         5: "Provinces and Territories of Canada",
         6: "World Landmarks",
         7: "Flags of Canada",
-        8: "World Flags",
+        8: "Canada Province and Territory Capitals",
       },
     };
   },
