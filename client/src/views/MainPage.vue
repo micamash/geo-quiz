@@ -63,8 +63,22 @@
         </div>
 
         <div class="coming-soon">
-          <input type="button" value="World Flags" />
+          <input type="button" value="USA State and Territory Capitals" />
           <h2>^ Coming Soon!</h2>
+        </div>
+
+        <div class="coming-soon">
+          <router-link
+            :to="{
+              name: 'CanadaProvinceAndTerritoryCapitalsQuiz',
+              params: { topicId: 8 },
+            }"
+          >
+            <input
+              type="button"
+              value="Canada Province and Territory Capitals"
+            />
+          </router-link>
         </div>
       </div>
     </div>

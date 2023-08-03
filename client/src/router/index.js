@@ -28,6 +28,11 @@ const router = new VueRouter({
       component: QuizPage
     },
     {
+      path: '/canada-province-and-territory-capitals',
+      name: 'CanadaProvinceAndTerritoryCapitalsQuiz',
+      component: QuizPage
+    },
+    {
       path: '/flags-of-the-usa',
       name: 'FlagsOfTheUSAQuiz',
       component: QuizPage

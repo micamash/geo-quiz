@@ -37,7 +37,7 @@ INSERT INTO topic (topic_name) VALUES
 	('Provinces and Territories of Canada'),
 	('World Landmarks'),
 	('Flags of Canada'),
-	('World Flags');
+	('Canada Province and Territory Capitals');
 
 DO $$
 DECLARE 
@@ -45,6 +45,7 @@ DECLARE
 	ca_stateprov_topic_id INT;
 	us_flags_topic_id INT;
 	us_capitals_topic_id INT;
+	ca_stateprov_caps_topic_id INT;
 	
 BEGIN
 
@@ -445,7 +446,7 @@ VALUES
     (63, 'British Columbia', false);
 	
 	
-	SELECT topic_id INTO us_flags_topic_id FROM topic WHERE topic_name = 'USA Flags';
+SELECT topic_id INTO us_flags_topic_id FROM topic WHERE topic_name = 'USA Flags';
 
 INSERT INTO question (topic_id, question_text, image_name)
 VALUES
@@ -790,9 +791,9 @@ VALUES
     (119, 'Colorado', false);
 	
 	
-	SELECT topic_id INTO us_capitals_topic_id FROM topic WHERE topic_name = 'US State Capitals';
+SELECT topic_id INTO us_capitals_topic_id FROM topic WHERE topic_name = 'US State Capitals';
 
-    INSERT INTO question (topic_id, question_text, image_name)
+INSERT INTO question (topic_id, question_text, image_name)
     VALUES
 	(us_capitals_topic_id, 'Name the capital:', 'USCapitalsImages/MontgomeryAlabama.jpg'),
 	(us_capitals_topic_id, 'Name the capital:', 'USCapitalsImages/JuneauAlaska.jpg'),
@@ -1099,7 +1100,91 @@ VALUES
     (169, 'Cheyenne', true),
     (169, 'Billings', false);
 	
+SELECT topic_id INTO ca_stateprov_caps_topic_id FROM topic WHERE topic_name = 'Canada Province and Territory Capitals';
 
+INSERT INTO question (topic_id, question_text, image_name)
+VALUES
+	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/Yukon.jpg'),
+	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/Nunavut.jpg'),
+	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/NorthwestTerritories.jpg'),
+	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/Saskatchewan.jpg'),
+	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/Quebec.jpg'),
+	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/PrinceEdwardIsland.jpg'),
+	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/Ontario.jpg'),
+	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/NovaScotia.jpg'),
+	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/NewfoundlandAndLabrador.jpg'),
+	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/NewBrunswick.jpg'),
+	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/Manitoba.jpg'),
+	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/BritishColumbia.jpg'),
+	(ca_stateprov_topic_id, 'Name the capital:', 'CanadaCapitalsImages/Alberta.jpg');
+
+
+INSERT INTO answer (question_id, answer_text, is_correct)
+VALUES
+    (51, 'Northwest Territories', false),
+    (51, 'Ontario', false),
+    (51, 'Yukon', true),
+	(51, 'Saskatchewan', false),
+
+    (52, 'Quebec', false),
+    (52, 'Northwest Territories', false),
+	(52, 'Nunavut', true),
+    (52, 'Yukon', false),
+
+    (53, 'Alberta', false),
+	(53, 'Manitoba', false),
+    (53, 'British Columbia', false),
+    (53, 'Northwest Territories', true),
+
+	(54, 'Saskatchewan', true),
+    (54, 'Manitoba', false),
+    (54, 'Quebec', false),
+	(54, 'Yukon', false),
+
+    (55, 'Newfoundland and Labrador', false),
+    (55, 'New Brunswick', false),
+	(55, 'Quebec', true),
+    (55, 'Manitoba', false),
+
+    (56, 'Nova Scotia', false),
+	(56, 'Prince Edward Island', true),
+    (56, 'Quebec', false),
+    (56, 'Newfoundland and Labrador', false),
+
+	(57, 'Quebec', false),
+    (57, 'Ontario', true),
+    (57, 'Manitoba', false),
+	(57, 'Nunavut', false),
+
+    (58, 'Prince Edward Island', false),
+    (58, 'Nova Scotia', true),
+	(58, 'Newfoundland and Labrador', false),
+    (58, 'Quebec', false),
+
+    (59, 'Saskatchewan', false),
+	(59, 'Nova Scotia', false),
+    (59, 'Newfoundland and Labrador', true),
+    (59, 'New Brunswick', false),
+
+	(60, 'Nova Scotia', false),
+	(60, 'Ontario', false),
+    (60, 'Prince Edward Island', false),
+    (60, 'New Brunswick', true),
+
+	(61, 'Manitoba', true),
+	(61, 'Alberta', false),
+    (61, 'Ontario', false),
+    (61, 'Saskatchewan', false),
+
+	(62, 'Quebec', false),
+	(62, 'Alberta', false),
+    (62, 'British Columbia', true),
+    (62, 'Ontario', false),
+
+	(63, 'Ontario', false),
+	(63, 'Alberta', true),
+    (63, 'Yukon', false),
+    (63, 'British Columbia', false);
 END $$;
 
 COMMIT;
