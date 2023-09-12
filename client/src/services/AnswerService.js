@@ -24,7 +24,7 @@ export default {
                 return false;
             }
         } catch (error) {
-            console.error("Error fetching answers:", error);
+            //console.error("Error fetching answers:", error);
             return false;
         }
     }
