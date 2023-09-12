@@ -128,10 +128,10 @@ export default {
         })
         .then((answersResponse) => {
           this.answerOptions = answersResponse.data;
-        })
-        .catch((error) => {
-          //console.error("Error fetching data:", error);
         });
+      //.catch((error) => {
+      //console.error("Error fetching data:", error);
+      //});
     },
 
     async submitAnswer() {
