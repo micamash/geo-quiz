@@ -33,3 +33,7 @@ build/
 .vscode/
 node_modules
 node_modules
+
+### Docker ###
+Dockerfile
+.dockerignore
