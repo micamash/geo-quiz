@@ -677,7 +677,7 @@ VALUES
 	
 	(97, 'Nevada', false),
 	(97, 'Utah', false),
-    (97, 'Arizon', false),
+    (97, 'Arizona', false),
     (97, 'New Mexico', true),
 	
 	(98, 'New York', true),
