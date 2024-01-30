@@ -62,11 +62,6 @@ const router = new VueRouter({
       name: 'USStateCapitalsQuiz',
       component: QuizPage
     },
-    {
-      path: '/flags-of-the-usa',
-      name: 'FlagsOfTheUSAQuiz',
-      component: QuizPage
-    },
   ]
 })
 
