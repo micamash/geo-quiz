@@ -357,8 +357,8 @@ VALUES
 	(50, 'Colorado', false),
     (50, 'Wyoming', true),
     (50, 'Montana', false);
-	
-	
+
+
 SELECT topic_id INTO ca_stateprov_topic_id FROM topic WHERE topic_name = 'Provinces and Territories of Canada';
 
 INSERT INTO question (topic_id, question_text, image_name)
@@ -444,8 +444,8 @@ VALUES
 	(63, 'Alberta', true),
     (63, 'Yukon', false),
     (63, 'British Columbia', false);
-	
-	
+
+
 SELECT topic_id INTO us_flags_topic_id FROM topic WHERE topic_name = 'USA Flags';
 
 INSERT INTO question (topic_id, question_text, image_name)
@@ -574,223 +574,223 @@ VALUES
 	(76, 'Guam', true),
     (76, 'US Virgin Islands', false),
     (76, 'Northern Mariana Islands', false),
-	
+
 	(77, 'Guam', false),
 	(77, 'Louisiana', false),
     (77, 'Hawaii', true),
     (77, 'Northern Mariana Islands', false),
-	
+
 	(78, 'New Hampshire', false),
 	(78, 'Montana', false),
     (78, 'Idaho', true),
     (78, 'Nebraska', false),
-	
+
 	(79, 'West Virginia', false),
 	(79, 'Illinois', true),
     (79, 'Massachusetts', false),
     (79, 'Rhode Island', false),
-	
+
 	(80, 'Vermont', false),
 	(80, 'Oregon', false),
     (80, 'Alaska', false),
     (80, 'Indiana', true),
-	
+
 	(81, 'Texas', false),
 	(81, 'Georgia', false),
     (81, 'North Carolina', false),
     (81, 'Iowa', true),
-	
+
 	(82, 'Kentucky', false),
 	(82, 'Kansas', true),
     (82, 'Nebraska', false),
     (82, 'Colorado', false),
-	
+
 	(83, 'Kentucky', true),
 	(83, 'North Dakota', false),
     (83, 'Vermont', false),
     (83, 'West Virginia', false),
-	
+
 	(84, 'Hawaii', false),
 	(84, 'Florida', false),
     (84, 'Louisiana', true),
     (84, 'South Carolina', false),
-	
+
 	(85, 'Vermont', false),
 	(85, 'Michigan', false),
     (85, 'Pennsylvania', false),
     (85, 'Maine', true),
-	
+
 	(86, 'Maryland', true),
 	(86, 'Massachusetts', false),
     (86, 'Arizona', false),
     (86, 'South Dakota', false),
-	
+
 	(87, 'New York', false),
 	(87, 'New Hampshire', false),
     (87, 'Massachusetts', true),
     (87, 'Connecticut', false),
-	
+
 	(88, 'Vermont', false),
 	(88, 'Michigan', true),
     (88, 'Iowa', false),
     (88, 'Pennsylvania', false),
-	
+
 	(89, 'Minnesota', true),
 	(89, 'South Dakota', false),
     (89, 'Oklahoma', false),
     (89, 'Kansas', false),
-	
+
 	(90, 'Mississippi', true),
 	(90, 'North Carolina', false),
     (90, 'Tennessee', false),
     (90, 'Missouri', false),
-	
+
 	(91, 'Utah', false),
 	(91, 'North Carolina', false),
     (91, 'Texas', false),
     (91, 'Missouri', true),
-	
+
 	(92, 'Montana', true),
 	(92, 'Wyoming', false),
     (92, 'Oregon', false),
     (92, 'Washington', false),
-	
+
 	(93, 'Kansas', false),
 	(93, 'Nebraska', true),
     (93, 'Minnesota', false),
     (93, 'Alaska', false),
-	
+
 	(94, 'Virginia', false),
 	(94, 'Wisconsin', false),
     (94, 'Utah', false),
     (94, 'Nevada', true),
-	
+
 	(95, 'Delaware', false),
 	(95, 'New Hampshire', true),
     (95, 'Maryland', false),
     (95, 'Maine', false),
-	
+
 	(96, 'Pennsylvania', false),
 	(96, 'New York', false),
     (96, 'New Jersey', true),
     (96, 'Vermont', false),
-	
+
 	(97, 'Nevada', false),
 	(97, 'Utah', false),
     (97, 'Arizona', false),
     (97, 'New Mexico', true),
-	
+
 	(98, 'New York', true),
 	(98, 'New Jersey', false),
     (98, 'Connecticut', false),
     (98, 'Massachusetts', false),
-	
+
 	(99, 'West Virginia', false),
 	(99, 'South Carolina', false),
     (99, 'Georgia', false),
     (99, 'North Carolina', true),
-	
+
 	(100, 'Utah', false),
 	(100, 'South Dakota', false),
     (100, 'North Dakota', true),
     (100, 'Wisconsin', false),
-	
+
 	(101, 'Guam', false),
 	(101, 'US Virgin Islands', false),
     (101, 'Northern Mariana Islands', true),
     (101, 'Puerto Rico', false),
-	
+
 	(102, 'Georgia', false),
 	(102, 'Virginia', false),
     (102, 'Tennessee', false),
     (102, 'Ohio', true),
-	
+
 	(103, 'Oklahoma', true),
 	(103, 'Arizona', false),
     (103, 'New Mexico', false),
     (103, 'Texas', false),
-	
+
 	(104, 'Nevada', false),
 	(104, 'Washington', false),
     (104, 'Oregon', true),
     (104, 'Utah', false),
-	
+
 	(105, 'Michigan', false),
 	(105, 'Delaware', false),
     (105, 'Maine', false),
     (105, 'Pennsylvania', true),
-	
+
 	(106, 'Ohio', false),
 	(106, 'Texas', false),
     (106, 'Puerto Rico', true),
     (106, 'Hawaii', false),
-	
+
 	(107, 'Rhode Island', true),
 	(107, 'US Virgin Islands', false),
     (107, 'Hawaii', false),
     (107, 'Northern Mariana Islands', false),
-	
+
 	(108, 'Guam', false),
 	(108, 'Hawaii', false),
     (108, 'Rhode Island', false),
     (108, 'South Carolina', true),
-	
+
 	(109, 'South Dakota', true),
 	(109, 'North Dakota', false),
     (109, 'North Carolina', false),
     (109, 'New Hampshire', false),
-	
+
 	(110, 'North Carolina', false),
 	(110, 'Texas', false),
     (110, 'Tennessee', true),
     (110, 'Mississippi', false),
-	
+
 	(111, 'Iowa', false),
 	(111, 'Puerto Rico', false),
     (111, 'Texas', true),
     (111, 'Tennessee', false),
-	
+
 	(112, 'District of Columbia', false),
 	(112, 'Puerto Rico', false),
     (112, 'Northern Mariana Islands', false),
     (112, 'US Virgin Islands', true),
-	
+
 	(113, 'Minnesota', false),
 	(113, 'Nevada', false),
     (113, 'Illinois', false),
     (113, 'Utah', true),
-	
+
 	(114, 'Maine', false),
 	(114, 'New Hampshire', false),
     (114, 'Vermont', true),
     (114, 'Maryland', false),
-	
+
 	(115, 'Virginia', true),
 	(115, 'West Virginia', false),
     (115, 'Kentucky', false),
     (115, 'Indiana', false),
-	
+
 	(116, 'Utah', false),
 	(116, 'California', false),
     (116, 'Oregon', false),
     (116, 'Washington', true),
-	
+
 	(117, 'Virginia', false),
 	(117, 'West Virginia', true),
     (117, 'Kentucky', false),
     (117, 'South Carolina', false),
-	
+
 	(118, 'North Dakota', false),
 	(118, 'Michigan', false),
     (118, 'Wisconsin', true),
     (118, 'Montana', false),
-	
+
 	(119, 'Wyoming', true),
 	(119, 'Montana', false),
     (119, 'Kansas', false),
     (119, 'Colorado', false);
-	
-	
+
+
 SELECT topic_id INTO us_capitals_topic_id FROM topic WHERE topic_name = 'US State Capitals';
 
 INSERT INTO question (topic_id, question_text, image_name)
@@ -1099,7 +1099,7 @@ VALUES
 	(169, 'Casper', false),
     (169, 'Cheyenne', true),
     (169, 'Billings', false);
-	
+
 SELECT topic_id INTO ca_stateprov_caps_topic_id FROM topic WHERE topic_name = 'Canada Province and Territory Capitals';
 
 INSERT INTO question (topic_id, question_text, image_name)
